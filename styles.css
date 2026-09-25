@@ -1,69 +1,113 @@
 :root {
-  --bg: #f7f3e9;      /* off-white ("blanc cassé") */
-  --ink: #3a3a3a;      /* dark grey */
-  --line: #cfc9ba;     /* faint borders/rules, a shade off the background */
+  --background: oklch(97.8% .008 85);
+  --foreground: oklch(42% .012 260);
+  --muted-foreground: oklch(58% .012 260);
+  --accent: oklch(20% .012 260);
+  --border: oklch(89.5% .014 85);
+  --philosophy: oklch(38% .12 145);
+  --font-serif: "Times New Roman", Times, Georgia, serif;
 }
 
 * { box-sizing: border-box; }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+}
+
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 15px;
-  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.45;
 }
 
-.page {
-  max-width: 340px;
-  padding: 64px 24px 48px;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.name {
-  font-size: 17px;
-  font-weight: normal;
-  margin: 0 0 6px;
-}
-
-.nav {
-  display: flex;
-  gap: 14px;
-  margin-bottom: 26px;
-}
-
-.nav a {
-  color: var(--ink);
-  text-decoration: underline;
-  font-size: 14px;
-}
-
-.ethos {
-  font-style: italic;
-  color: var(--ink);
-  opacity: .75;
-  margin: 0 0 26px;
-}
-
-.socials {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 40px;
-}
-
-.social {
-  font-size: 12px;
-  text-decoration: underline;
-  cursor: default;
-}
-
-.image-placeholder {
+.site-column {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  border: 1px solid var(--line);
-  background: #efe9db;
+  max-width: 560px;
+  padding-inline: 24px;
+  padding-top: 9vh;
+  padding-bottom: 64px;
+  margin-inline: auto;
 }
 
-@media (max-width: 480px) {
-  .page { padding: 40px 20px; max-width: 100%; }
+.site-header {
+  display: flex;
+  align-items: baseline;
+  column-gap: 16px;
+  row-gap: 4px;
+  flex-wrap: wrap;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.site-name {
+  font-weight: 400;
+  color: var(--foreground);
+  transition: color .2s;
+  text-decoration-line: none;
+}
+.site-name:hover { color: var(--accent); }
+
+.site-nav-link {
+  font-weight: 400;
+  color: var(--muted-foreground);
+  transition: color .2s;
+  text-decoration-line: none;
+}
+.site-nav-link:hover { color: var(--accent); }
+
+.site-paragraph {
+  margin: 28px 0 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.philosophy-link {
+  font-weight: 600;
+  color: var(--philosophy);
+  text-decoration-line: none;
+  transition: opacity .2s;
+}
+.philosophy-link:hover { opacity: .65; }
+
+.contact-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 6px;
+  margin-top: 28px;
+  font-size: .75rem;
+  letter-spacing: .025em;
+  color: var(--muted-foreground);
+}
+
+.contact-link {
+  color: var(--muted-foreground);
+  text-decoration-line: none;
+  transition: color .2s;
+}
+.contact-link:hover { color: var(--accent); }
+
+.contact-separator {
+  color: var(--muted-foreground);
+  opacity: .6;
+  margin-right: 6px;
+}
+
+.front-page-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  margin-top: 32px;
 }
