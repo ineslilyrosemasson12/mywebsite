@@ -1,0 +1,69 @@
+:root {
+  --bg: #f7f3e9;      /* off-white ("blanc cassé") */
+  --ink: #3a3a3a;      /* dark grey */
+  --line: #cfc9ba;     /* faint borders/rules, a shade off the background */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 340px;
+  padding: 64px 24px 48px;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: normal;
+  margin: 0 0 6px;
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.ethos {
+  font-style: italic;
+  color: var(--ink);
+  opacity: .75;
+  margin: 0 0 26px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.social {
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  background: #efe9db;
+}
+
+@media (max-width: 480px) {
+  .page { padding: 40px 20px; max-width: 100%; }
+}
